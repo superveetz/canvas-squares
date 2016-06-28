@@ -1,0 +1,46 @@
+{
+  "name": "CanvasSquareModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "colNum": {
+      "type": "number",
+      "required": true
+    },
+    "rowNum": {
+      "type": "number",
+      "required": true
+    },
+    "fillStyle": {
+      "type": "string",
+      "default": "green"
+    },
+    "velocity": {
+      "type": "number",
+      "default": "6"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "canvasAnimation": {
+      "type": "belongsTo",
+      "model": "CanvasAnimationModel",
+      "foreignKey": "CanvasAnimationModelId"
+    },
+    "checkpoints": {
+      "type": "hasMany",
+      "model": "CanvasSquareCheckpointModel",
+      "foreignKey": ""
+    },
+    "endpoint": {
+      "type": "hasOne",
+      "model": "CanvasSquareEndpointModel",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

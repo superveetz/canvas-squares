@@ -1,0 +1,28 @@
+{
+  "name": "CanvasSquareCheckpointModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "colNum": {
+      "type": "number",
+      "required": true
+    },
+    "rowNum": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "canvasSquare": {
+      "type": "belongsTo",
+      "model": "CanvasSquareModel",
+      "foreignKey": "canvasSquareModelId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,51 @@
+<ul id="clickOptions" class="text-center list-group"
+    style="left: {{clickOptionsPos.left}}px; top: {{clickOptionsPos.top}}px;"
+    ng-show="showClickOptions">
+
+  <!--<li class="list-group-item" ng-show="spaceClicked.existsOnGrid.checkpoints.length">-->
+    <!--<div id="selectSquares" class="dropdown">-->
+      <!--<button class="btn btn-sm btn-info dropdown-toggle"-->
+              <!--type="button"-->
+              <!--id="dropdownMenu2"-->
+              <!--data-toggle="dropdown"-->
+              <!--aria-haspopup="true"-->
+              <!--aria-expanded="true">-->
+        <!--Move Checkpoint-->
+        <!--<span class="caret"></span>-->
+      <!--</button>-->
+      <!--<ul class="dropdown-menu list-inline"-->
+          <!--style="min-width: {{spaceClicked.existsOnGrid.checkpoints.length * 54}}px;"-->
+          <!--aria-labelledby="dropdownMenu2">-->
+        <!--<li ng-repeat="checkpoint in spaceClicked.existsOnGrid.checkpoints track by $index">-->
+          <!--<button class="btn btn-block btn-info btn-sm"-->
+                  <!--ng-click="moveCheckpoint(checkpoint)">-->
+            <!--#: {{$index + 1}}-->
+          <!--</button>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</li>-->
+
+  <li class="list-group-item" ng-show="spaceClicked.existsOnGrid.squares.length">
+    <button class="btn btn-success btn-sm"
+            ng-click="setSelectedSquare(spaceClicked.existsOnGrid.squares[0])">
+      Select Square
+    </button>
+  </li>
+
+  <li class="list-group-item" ng-show="selectedSquare">
+    <button class="btn btn-primary btn-sm"
+            ng-click="addNewCheckpoint()">
+      Set Checkpoint
+    </button>
+  </li>
+
+  <li class="list-group-item" ng-show="spaceClicked.existsOnGrid.endpoints.length">
+    <button class="btn btn-danger btn-sm">Move Endpoint</button>
+  </li>
+
+  <li class="list-group-item">
+    <button class="btn btn-default btn-sm"
+            ng-click="addNewSquare()">Add Square</button>
+  </li>
+</ul>

@@ -1,0 +1,24 @@
+{
+  "name": "CanvasAnimationModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "startDelay": {
+      "type": "number",
+      "default": "0"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "squares": {
+      "type": "hasMany",
+      "model": "CanvasSquareModel",
+      "foreignKey": "CanvasAnimationModelId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="canvasApp">
+<head>
+  <meta charset="utf-8">
+  <title>New Page</title>
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Vendor JS -->
+  <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="./bower_components/underscore/underscore.js"></script>
+  <script type="text/javascript" src="./bower_components/javascript-astar/astar.js"></script>
+  <script type="text/javascript" src="./bower_components/async/dist/async.js"></script>
+  <script type="text/javascript" src="./js/vendor/rAF.js"></script>
+
+  <!-- Vendor Angular -->
+  <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="./js/services/lb-services.js"></script>
+
+  <!-- App Modules -->
+  <script type="text/javascript" src="./js/modules/canvas-square-services/canvas-square-services.js"></script>
+  <script type="text/javascript" src="./js/modules/canvas-square-viewer/canvas-square-viewer.js"></script>
+  <script type="text/javascript" src="./js/modules/canvas-square-builder/canvas-square-builder.js"></script>
+
+  <!-- App -->
+  <script type="text/javascript" src="./app.js"></script>
+  <script type="text/javascript" src="./js/controllers/app.controllers.js"></script>
+
+  <base href="/">
+</head>
+<body>
+
+<main id="main" role="main">
+  <div class="main-view" ui-view></div>
+</main>
+
+</body>
+</html>

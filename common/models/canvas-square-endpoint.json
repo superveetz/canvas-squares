@@ -1,0 +1,28 @@
+{
+  "name": "CanvasSquareEndpointModel",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rowNum": {
+      "type": "number",
+      "required": true
+    },
+    "colNum": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "square": {
+      "type": "belongsTo",
+      "model": "CanvasSquare",
+      "foreignKey": "canvasSquareModelId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

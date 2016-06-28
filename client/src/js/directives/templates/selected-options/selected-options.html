@@ -1,0 +1,125 @@
+<script type="text/ng-template" id="saveModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Ready to Save Animation?</h3>
+  </div>
+  <div class="modal-body">
+
+    <div class="alert alert-danger" role="alert" ng-if="showWrongPasswordAlert">
+      <i class="glyphicon glyphicon-exclamation-sign"></i> &nbsp;<b>Wrong Password</b>
+    </div>
+
+    <div class="alert alert-success" role="alert" ng-if="showAnimationSaved">
+      <i class="glyphicon glyphicon-check"></i> &nbsp;<b>Animation Saved Successfully</b>
+    </div>
+
+    <form id="saveAnimationForm" name="saveAnimationForm" autocomplete="off">
+      <div class="form-group">
+        <label for="passwordToSave">A password is required: </label>
+        <input type="password" class="form-control" id="passwordToSave" placeholder="Password" ng-model="passwordToSave">
+      </div>
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="submit" form="saveAnimationForm" ng-click="saveAnimation()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
+
+<div class="panel-group" id="dropdownOptions" role="tablist" aria-multiselectable="false" draggable>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="outterHeading">
+      <h4 class="panel-title">
+        <button class="btn-block btn-primary btn-lg" role="button" data-toggle="collapse" data-parent="#dropdownOptions"
+        href="#outterCollapse"
+           aria-expanded="true"
+           aria-controls="outterCollapse">
+          Options Menu (Draggable)
+        </>
+      </h4>
+    </div>
+    <div id="outterCollapse" class="panel-collapse  collapse" role="tabpanel"
+         aria-labelledby="outterHeading">
+      <div class="panel-body">
+
+        <form class="form-horizontal">
+
+          <div class="form-group">
+            <label for="animationStartDelay" class="col-xs-5 control-label">Start Delay:</label>
+            <div class="col-xs-7">
+              <input type="number" class="form-control" id="animationStartDelay" placeholder="seconds"
+                     ng-model="canvasAnimation.startDelay">
+            </div>
+          </div>
+
+        </form>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="showAllSquarePaths" ng-change="drawAllSquarePaths()">
+            Show all square's checkpoints &amp; paths
+          </label>
+        </div>
+
+        <div class="panel-group" id="dropdownSelectedSquare" role="tablist" aria-multiselectable="false"
+             ng-show="selectedSquare">
+
+          <div class="panel panel-default panel-warning">
+            <div class="panel-heading" role="tab" id="innerHeading">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#dropdownSelectedSquare" href="#innerCollapse" aria-expanded="true" aria-controls="innerCollapse">
+                  Selected Square
+                </a>
+              </h4>
+            </div>
+            <div id="innerCollapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="innerHeading">
+              <div class="panel-body">
+
+                <form class="form-horizontal" aria-labelledby="squareOptions" novalidate autocomplete="off">
+
+                  <div class="form-group">
+                    <label for="selectedSquareVel" class="col-xs-3 control-label">Speed:</label>
+                    <div class="col-xs-9">
+                      <input type="number" class="form-control" id="selectedSquareVel" placeholder="px/s"
+                             ng-model="selectedSquare.velocity">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="selectedSquareFillStyle" class="col-xs-3 control-label">Color:</label>
+                    <div class="col-xs-9">
+                      <input type="text" class="form-control" id="selectedSquareFillStyle" placeholder="color"
+                             ng-model="selectedSquare.fillStyle">
+                    </div>
+                  </div>
+
+                </form>
+
+              </div>
+            </div><!-- end innerCollapse -->
+
+          </div><!-- end dropdownSelectedSquare panel -->
+        </div><!-- end dropdownSelectedSquare -->
+
+        <button class="btn btn-block btn-info btn-md" ng-show="!animationStarted"
+                ng-click="start(); animationStarted = true">
+          Preview Animation
+        </button>
+
+        <button class="btn btn-block btn-danger btn-md" ng-show="animationStarted"
+                ng-click="stop(); animationStarted = false">
+          Stop Animation
+        </button>
+
+        <!--<button class="btn btn-block btn-success btn-md"-->
+                <!--ng-click="openSaveModal()">-->
+          <!--Save Animation-->
+        <!--</button>-->
+
+      </div><!-- end outterCollapse panel-body -->
+    </div><!-- end outterCollapse -->
+
+  </div><!-- end dropdownOptions panel -->
+</div><!-- end dropdownOptions -->
+

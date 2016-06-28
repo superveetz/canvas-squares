@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "CanvasAnimationModel": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "CanvasSquareModel": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "CanvasSquareCheckpointModel": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "CanvasSquareEndpointModel": {
+    "dataSource": "mongoDs",
+    "public": true
+  }
+}
