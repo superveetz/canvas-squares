@@ -4,25 +4,11 @@
   </div>
   <div class="modal-body">
 
-    <div class="alert alert-danger" role="alert" ng-if="showWrongPasswordAlert">
-      <i class="glyphicon glyphicon-exclamation-sign"></i> &nbsp;<b>Wrong Password</b>
-    </div>
-
-    <div class="alert alert-success" role="alert" ng-if="showAnimationSaved">
-      <i class="glyphicon glyphicon-check"></i> &nbsp;<b>Animation Saved Successfully</b>
-    </div>
-
-    <form id="saveAnimationForm" name="saveAnimationForm" autocomplete="off">
-      <div class="form-group">
-        <label for="passwordToSave">A password is required: </label>
-        <input type="password" class="form-control" id="passwordToSave" placeholder="Password" ng-model="passwordToSave">
-      </div>
-    </form>
+    You will be taken a new page which loads your current animation from a database.
 
   </div>
   <div class="modal-footer">
-    <button class="btn btn-primary" type="submit" form="saveAnimationForm" ng-click="saveAnimation()">Save</button>
-    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="saveAnimation()">Save</button>
   </div>
 </script>
 
@@ -36,7 +22,7 @@
            aria-expanded="true"
            aria-controls="outterCollapse">
           Options Menu (Draggable)
-        </>
+        </button>
       </h4>
     </div>
     <div id="outterCollapse" class="panel-collapse  collapse" role="tabpanel"
@@ -112,10 +98,10 @@
           Stop Animation
         </button>
 
-        <!--<button class="btn btn-block btn-success btn-md"-->
-                <!--ng-click="openSaveModal()">-->
-          <!--Save Animation-->
-        <!--</button>-->
+        <button class="btn btn-block btn-success btn-md"
+                ng-click="openSaveModal()">
+          Save Animation
+        </button>
 
       </div><!-- end outterCollapse panel-body -->
     </div><!-- end outterCollapse -->

@@ -11,9 +11,11 @@
 
       $scope.showClickOptions = false;
       $scope.showAllSquarePaths = false;
+      $scope.showStartingMessage = true;
 
       $scope.setClickOptions = function(event) {
         event.stopPropagation();
+        $scope.showStartingMessage = false;
 
         // TODO: set clickPosition to not go off the screen
         var clickEvent = CanvasClickSystem.getClickDetails().clickEvent;
@@ -114,14 +116,7 @@
           scope: $scope,
           controller: ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
             $scope.saveAnimation = function () {
-              var password = "Monsoon@321";
-
-              if ($scope.passwordToSave === password) {
-                $scope.save();
-              } else {
-                $scope.showWrongPasswordAlert = true;
-              }
-
+              $scope.save();
             };
 
             $scope.cancel = function () {

@@ -1,4 +1,8 @@
-<div class="canvas-wrap">
+<div class="canvas-wrap" ng-click="firstClick()">
+
+  <div class="starting-text" ng-if="showStartingMessage">
+    <h2>Click to Begin</h2>
+  </div>
 
   <selected-options></selected-options>
 
